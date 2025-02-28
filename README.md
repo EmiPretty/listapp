@@ -29,3 +29,6 @@ React Native
 Expo
 React Native Paper (UI Material Design)
 React Hooks (useState)
+
+# lancer expo
+npx expo start
