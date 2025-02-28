@@ -2,8 +2,6 @@
 
 Ce projet est une application mobile développée en **React Native** avec **React Native Paper**, permettant de gérer une liste d'objectifs personnels. L'utilisateur peut ajouter, modifier et supprimer des objectifs facilement.
 
----
-
 ## ✨ Fonctionnalités
 
 - 📌 **Ajouter un objectif**
@@ -12,8 +10,6 @@ Ce projet est une application mobile développée en **React Native** avec **Rea
 - 🔔 **Messages d'erreur pour les champs vides**
 - 🏗️ **Interface moderne avec React Native Paper**
 - 📱 **Optimisé pour les mobiles**
-
----
 
 ## 📦 Installation
 
