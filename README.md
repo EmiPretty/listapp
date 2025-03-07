@@ -18,12 +18,12 @@ Ce projet est une application mobile développée en **React Native** avec **Rea
    git clone https://github.com/EmiPretty/listapp.git
    cd listapp
 
-2 Installer les dépendances
+2. Installer les dépendances
  npm install
 # ou
 yarn install
 
-🛠️ Technologies utilisées
+# 🛠️ Technologies utilisées
 
 React Native
 Expo
