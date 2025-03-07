@@ -1,14 +1,39 @@
+// Accueil.js
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';  
+import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const Accueil = () => {
+const Accueil = ({ navigation }) => {
+  const fadeAnim = new Animated.Value(0);
+
+  React.useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 1200,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+
   return (
     <LinearGradient
-      colors={['#F4F0FF', '#F0F7FF', '#FBFCE0']} 
+      colors={['#D6E4F0', '#AFCDFF', '#FFFFFF']}
       style={styles.container}
     >
-      <Text style={styles.text}>Bienvenue sur l'Accueil</Text>
+      <Animated.View style={[styles.content, { opacity: fadeAnim }]}>
+        <MaterialCommunityIcons name="star-shooting" size={80} color="#091C3A" />
+        <Text style={styles.title}>✨ Réalise tes Rêves ✨</Text>
+        <Text style={styles.subtitle}>
+          Organise, priorise et accomplis tes objectifs avec passion 💡
+        </Text>
+
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={() => navigation.navigate('Liste')} 
+        >
+          <Text style={styles.buttonText}>Commencer 🎯</Text>
+        </TouchableOpacity>
+      </Animated.View>
     </LinearGradient>
   );
 };
@@ -19,9 +44,41 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {
-    fontSize: 20,
-    color: 'black',
+  content: {
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#091C3A',
+    marginTop: 10,
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+  },
+  subtitle: {
+    fontSize: 18,
+    color: '#333',
+    textAlign: 'center',
+    marginTop: 8,
+    fontFamily: 'Avenir',
+  },
+  button: {
+    marginTop: 20,
+    backgroundColor: '#091C3A',
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 30,
+    shadowColor: '#091C3A',
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    color: '#FFF',
+    fontWeight: 'bold',
   },
 });
 

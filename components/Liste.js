@@ -57,7 +57,7 @@ export default function App() {
 
   return (
     <LinearGradient
-      colors={['#F4F0FF', '#F0F7FF', '#FBFCE0']}
+      colors={['#D6E4F0', '#AFCDFF', '#FFFFFF']}
       style={styles.container}
     >
       <FlatList
@@ -87,7 +87,7 @@ export default function App() {
           value={newGoal}
           onChangeText={setNewGoal}
         />
-        <Button mode="contained" onPress={addGoal}>
+        <Button mode="contained" onPress={addGoal} style={styles.addButton}>
           {editingIndex !== null ? 'Modifier' : 'Ajouter'}
         </Button>
       </View>
@@ -158,6 +158,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  addButton: {
+    backgroundColor: '#091C3A',
   },
   modalContent: {
     width: 300,
